@@ -4,7 +4,41 @@ A web application to manage and track student assignment submissions, built with
 
 ---
 
+## 🧑‍💻 How to Successfully Test This Webapp
+
+To test this webapp on your own machine, follow these steps:
+
+1. **Install PostgreSQL**  
+   Download and install PostgreSQL from [https://www.postgresql.org/download/](https://www.postgresql.org/download/).
+
+2. **Create the Database**  
+   Open pgAdmin or use the `psql` command-line tool to create a database named `assignments_db`.
+
+3. **Set Up Your Credentials**  
+   - Create a PostgreSQL user (or use the default `postgres` user).
+   - Set a password for your user.
+   - If your password contains special characters (like `@`), [URL-encode](https://www.urlencoder.org/) them (e.g., `@` becomes `%40`).
+
+4. **Configure Environment Variables**  
+   - Create a `.env` file in your project root:
+     ```
+     DATABASE_URL=postgresql+psycopg2://<username>:<password>@localhost/assignments_db
+     ```
+     Example (with password `abc@20`):
+     ```
+     DATABASE_URL=postgresql+psycopg2://postgres:abc%4020@localhost/assignments_db
+     ```
+   - **Do not commit your `.env` file to version control.**
+
+5. **Install Python Dependencies**  
+   ```
+   pip install -r requirements.txt
+   ```
+
+---
+
 ## 📚 API Endpoints
+
 
 ### **Student APIs**
 - `POST /students/`  
@@ -150,3 +184,4 @@ DATABASE_URL = "postgresql+psycopg2://<user>:<password>@localhost/assignments_db
 - All static files are served from the `/static` path.
 
 ---
+
