@@ -214,9 +214,9 @@ DATABASE_URL = "postgresql+psycopg2://<user>:<password>@localhost/assignments_db
 - **Integration tests**: Verify API and DB interaction.
 - **API tests**: Ensure endpoints process requests and return expected results.
 - **Coverage achieved:**  
-  ![Coverage Report](static/screenshots/coverage_report.png)
+  ![Coverage Report](static\screenshots\Coverage_report.png)
 - **Test run result:**  
-  ![Test Result Terminal](static/screenshots/test_result_terminal.png)
+  ![Test Result Terminal](static\screenshots\Test_result_terminal.png)
 
 ---
 
