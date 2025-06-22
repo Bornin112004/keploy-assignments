@@ -4,6 +4,13 @@ A web application to manage and track student assignment submissions, built with
 
 ---
 
+## 🛠️ Tech Stack
+
+- **Backend:** FastAPI (Python)
+- **Database:** PostgreSQL (via SQLAlchemy ORM)
+- **Frontend:** HTML, CSS, JavaScript (vanilla)
+- **Testing:** Pytest, pytest-cov, httpx
+
 ## 🧑‍💻 How to Successfully Test This Webapp
 
 To test this webapp on your own machine, follow these steps:
@@ -39,6 +46,12 @@ To test this webapp on your own machine, follow these steps:
 
 ## 📚 API Endpoints
 
+**Key endpoints:**
+- `/students/` (POST, GET, PUT)
+- `/assignments/` (POST, GET, DELETE)
+- `/submissions/` (GET, POST, DELETE)
+- `/students/completed/{assignment_id}` (GET)
+- `/students/pending/{assignment_id}` (GET)
 
 ### **Student APIs**
 - `POST /students/`  
@@ -168,20 +181,59 @@ DATABASE_URL = "postgresql+psycopg2://<user>:<password>@localhost/assignments_db
 
 ---
 
-## 📸 Screenshots
+## 🧰 Testing Frameworks/Tools Used
 
-### Student Assignment Tracker
-![picture1](static/screenshots/dashboard.png)
-![picture2](static/screenshots/post_and_get.png)
-![picture3](static/screenshots/submission.png)
+- **pytest**: For all unit, integration, and API tests.
+- **pytest-cov**: For measuring code coverage.
+- **httpx**: For API endpoint testing.
+- **unittest.mock**: For mocking database sessions in unit tests.
 
 ---
 
-## 📝 Notes
+## 🧪 How to Run the Tests
 
-- The frontend provides forms and tables for all major actions.
-- The backend is fully RESTful and can be used independently with tools like Postman or curl.
+1. **Set your PYTHONPATH** (Windows):
+   ```
+   set PYTHONPATH=%CD%
+   ```
+
+2. **Run all tests with coverage:**
+   ```
+   python -m pytest --import-mode=importlib --cov=app --cov-report=html tests/
+   ```
+
+3. **View the HTML coverage report:**  
+   Open `htmlcov/index.html` in your browser.
+
+---
+
+
+## ✅ Test Coverage
+
+- **Unit tests**: Cover CRUD logic with and without database mocking.
+- **Integration tests**: Verify API and DB interaction.
+- **API tests**: Ensure endpoints process requests and return expected results.
+- **Coverage achieved:**  
+  ![Coverage Report](static/screenshots/coverage_report.png)
+- **Test run result:**  
+  ![Test Result Terminal](static/screenshots/test_result_terminal.png)
+
+---
+
+## 📸 Screenshots
+
+### Student Assignment Tracker
+![Dashboard](static/screenshots/dashboard.png)
+![Create & Get](static/screenshots/post_and_get.png)
+![Submission](static/screenshots/submission.png)
+
+---
+
+## Notes
+
+- The backend is fully RESTful and can be used with any HTTP client.
 - All static files are served from the `/static` path.
+- See API docs at [http://localhost:8000/docs](http://localhost:8000/docs) when running.
 
 ---
 

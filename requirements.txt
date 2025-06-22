@@ -2,3 +2,7 @@ fastapi
 uvicorn
 sqlalchemy
 psycopg2
+pytest
+httpx
+pytest-cov
+pytest-asyncio
