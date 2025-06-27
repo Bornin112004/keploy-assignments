@@ -237,3 +237,31 @@ DATABASE_URL = "postgresql+psycopg2://<user>:<password>@localhost/assignments_db
 
 ---
 
+## 🚦 Keploy API Testing & CI/CD Integration
+
+This project integrates [Keploy](https://keploy.io/) for AI-powered API test generation and automated API testing in CI/CD.
+
+- **Keploy Console:** Used to generate API tests from the OpenAPI schema and cURL commands.
+- **GitHub Actions:** Runs the Keploy test suite automatically on every push and pull request.
+
+### 📋 CI/CD Configuration
+
+See the [CI workflow file](.github/workflows/ci.yml) for the full pipeline setup.
+
+---
+
+## 📸 Keploy Test Reports
+
+
+- **1. Test Reports:**
+  ![Run_Reports](static/screenshots/run_reports.png)
+
+- **2. Tests generated in Keploy Console by AI:**  
+  ![Console](static/screenshots/keploy_console.png)
+
+- **3. Tests run in CI/CD pipeline:**  
+   ![ci_pipeline](static/screenshots/ci.png)
+
+---
+
+
